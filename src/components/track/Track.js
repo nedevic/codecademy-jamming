@@ -20,12 +20,12 @@ class Track extends React.Component {
     removeAction && removeAction(this.props.track);
   }
 
-  renderAction() {
+  renderTrackAction() {
     const buttonSymbol = this.props.isRemoval ? '-' : '+';
     const buttonAction = this.props.isRemoval ? this.removeTrack : this.addTrack;
 
     return (
-      <button className="Track-action" onClick={buttonAction}>
+      <button className="trackAction" onClick={buttonAction}>
         {buttonSymbol}
       </button>
     );
@@ -33,12 +33,12 @@ class Track extends React.Component {
 
   render() {
     return (
-      <div className="Track">
-        <div className="Track-information">
+      <div className="track">
+        <div className="trackInformation">
           <h3>{this.props.track.name}</h3>
           <p>{`${this.props.track.artist} | ${this.props.track.album}`}</p>
         </div>
-        {this.renderAction()}
+        {this.renderTrackAction()}
       </div>
     );
   }

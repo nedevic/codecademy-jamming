@@ -1,0 +1,9 @@
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomDisplay {
+  margin-top: auto;
+}

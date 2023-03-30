@@ -1,14 +1,16 @@
 import React from "react";
 
-import "./SearchResults.css";
+import songBoxStyles from "../../css_modules/songbox/songbox.module.css";
 
 import TrackList from "../tracklist/TrackList";
 
 class SearchResults extends React.Component {
   render() {
     return (
-      <div className="SearchResults">
-        <h2>Results</h2>
+      <div className={songBoxStyles.songBox}>
+        <h2 className={songBoxStyles.songBoxHeader}>
+          Results
+        </h2>
         <TrackList
           isRemoval={false}
           tracks={this.props.searchResults}

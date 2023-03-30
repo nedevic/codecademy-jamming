@@ -1,13 +1,16 @@
 import React from "react";
 
 import "./SearchBar.css";
+import positioningStyles from "../../css_modules/positioning/positioning.module.css";
+
+import Button from "../button/Button";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      term: null
+      term: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -26,15 +29,15 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="SearchBar">
-        <input
-          placeholder="Enter A Song, Album, or Artist"
-          onChange={this.handleChange} />
-        <button
-          className="SearchButton"
-          onClick={this.search} >
-            SEARCH
-        </button>
+      <div className="searchBar">
+        <div className={positioningStyles.centerContainer}>
+          <input
+            placeholder="Enter A Song, Album, or Artist"
+            onChange={this.handleChange} />
+        </div>
+        <Button onClick={this.search} >
+          SEARCH
+        </Button>
       </div>
     );
   }

@@ -1,37 +1,63 @@
-.Track {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+.track {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(256, 256, 256, 0.8);
 }
 
-.Track-action {
-    cursor: pointer;
-    padding: .5rem;
-    font-size: 1.05rem;
-    transition: color .25s;
-    border: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    color: #fff;
+.trackAction {
+  cursor: pointer;
+  padding: .5rem;
+  font-size: 1.05rem;
+  transition: color .25s;
+  border: 0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
 }
 
-.Track-action:hover {
-    color: rgba(265, 265, 265, .5);
+.trackAction:hover {
+  color: rgba(265, 265, 265, .5);
 }
 
-.Track-information {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 72px;
+.trackInformation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 45px;
 }
 
-.Track-information h3 {
-    margin-bottom: .22rem;
+.trackInformation h3 {
+  font-size: .9rem;
 }
 
-.Track-information p {
-    font-size: .83rem;
-    font-weight: 300;
-    color: rgba(256, 256, 256, 0.8);
+.trackInformation p {
+  font-size: .83rem;
+  font-weight: 300;
+  color: rgba(256, 256, 256, 0.8);
+}
+
+@media only screen and (max-width: 560px) {
+
+  .trackInformation h3,
+  p {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+
+  .trackInformation h3,
+  p {
+    max-width: 120px;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+
+  .trackInformation h3,
+  p {
+    max-width: 80px;
+  }
 }

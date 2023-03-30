@@ -1,15 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import './index.css';
 
 import App from './components/app/App';
 import reportWebVitals from './reportWebVitals';
 
+import { createBrowserHistory } from 'history';
+import { SpotifyProvider } from './hooks/spotify/useSpotify';
+
+const history = createBrowserHistory();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <Router history={history}>
+        <SpotifyProvider>
+          <App />
+        </SpotifyProvider>
+      </Router>
   </React.StrictMode>
 );
 

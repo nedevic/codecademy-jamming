@@ -1,3 +1,8 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 body,
 html,
 #root {
@@ -9,45 +14,71 @@ html {
 }
 
 h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.88rem;
+}
+
+h1.appTitle {
   margin: 0;
   padding: .77rem 0;
   background-color: #010c3f;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.88rem;
   color: #fff;
+  position: absolute;
+  width: 100%;
 }
 
-h1 .highlight {
+h1.appTitle .highlight {
   color: #6c41ec;
 }
 
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.55rem;
-}
-
-.App {
-  height: 100%;
-  padding: 0 17% 10% 17%;
-  background-image: url('./background_photo_desktop.jpg');
+.background {
+  background-color: #2e0275;
+  background-image: url('./background_photo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Work Sans', sans-serif;
-  font-weight: 500;
-  color: #fff;
+  height: 100%;
 }
 
-.App-playlist {
+.loginButtonContainer {
+  height: 100%;
+}
+
+.logoutButtonContainer {
+  height: 12%;
+}
+
+.trackContent {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
+.appBody {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  height: 88%;
+  padding: 0% 15% 0% 15%;
+  overflow: auto;
+}
+
 @media only screen and (max-width: 1020px) {
-  .App-playlist {
+  .trackContent {
     align-items: center;
     flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .appBody {
+    padding: 0% 12% 0% 12%;
+    overflow-x: hidden;
   }
 }

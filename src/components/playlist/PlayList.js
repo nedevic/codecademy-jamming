@@ -1,7 +1,10 @@
 import React from "react";
 
 import "./PlayList.css";
+import songBoxStyles from "../../css_modules/songbox/songbox.module.css";
+import positioningStyles from "../../css_modules/positioning/positioning.module.css";
 
+import Button from "../button/Button";
 import TrackList from "../tracklist/TrackList";
 
 class PlayList extends React.Component {
@@ -18,19 +21,20 @@ class PlayList extends React.Component {
 
   render() {
     return (
-      <div className="Playlist">
+      <div className={songBoxStyles.songBox}>
         <input 
           defaultValue="New Playlist"
+          className={`${songBoxStyles.songBoxHeader} playListInput`}
           onChange={this.handleNameChange} />
         <TrackList
           isRemoval={true}
           tracks={this.props.playListTracks}
           onRemove={this.props.onRemove} />
-        <button
-          className="Playlist-save"
-          onClick={this.props.onSave} >
+        <div className={`${positioningStyles.bottomDisplay} ${positioningStyles.centerContainer}`}>
+          <Button onClick={this.props.onSave} >
             SAVE TO SPOTIFY
-        </button>
+          </Button>
+        </div>
       </div>
     );
   }

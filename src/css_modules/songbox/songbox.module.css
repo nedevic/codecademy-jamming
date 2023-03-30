@@ -1,0 +1,34 @@
+.songBoxHeader {
+  height: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+
+.songBox {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 380px;
+  padding: .88rem;
+  background-color: rgba(1, 12, 63, 0.7);
+  box-shadow: 0 4px 2px 2px #000000;
+}
+
+@media only screen and (max-width: 1020px) {
+  .songBox {
+    width: 80%;
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .songBoxHeader {
+    font-size: 1.05rem;
+  }
+
+  .songBox {
+    width: 92%;
+    height: 220px;
+  }
+}
