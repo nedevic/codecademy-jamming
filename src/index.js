@@ -13,13 +13,11 @@ import { SpotifyProvider } from './hooks/spotify/useSpotify';
 const history = createBrowserHistory();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <Router history={history}>
-        <SpotifyProvider>
-          <App />
-        </SpotifyProvider>
-      </Router>
-  </React.StrictMode>
+  <Router history={history}>
+    <SpotifyProvider>
+      <App />
+    </SpotifyProvider>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

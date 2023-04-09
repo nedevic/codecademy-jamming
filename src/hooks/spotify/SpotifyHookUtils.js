@@ -21,12 +21,12 @@ const SpotifyHookUtils = {
       const access_token = searchParams.get("access_token");
       const token_type = searchParams.get("token_type");
       const expires_in = parseInt(searchParams.get("expires_in"), 10);
-      const token_validity = Math.floor(Date.now() / 1000) + expires_in;
+      const token_expiration_time = Math.floor(Date.now() / 1000) + expires_in;
 
       return {
         access_token,
         token_type,
-        token_validity
+        token_expiration_time,
       };
     
     } catch (err) {

@@ -20,9 +20,11 @@ function App() {
   const [playListTracks, setPlayListTracks] = useState([]);
   const {
     initiateSpotifyLogin,
-    loadTokenInfoFromLocalStorage,
-    revokeToken,
     hasRedirectedFromValidPopup,
+    loadTokenInfoFromLocalStorage,
+    setSpotifySessionTimeout,
+    clearSpotifySessionTimeout,
+    revokeToken,
     isSpotifyTokenValid,
   } = useSpotifyContext();
 
@@ -31,7 +33,9 @@ function App() {
      * attempt to use any local storage Spotify token
      * when the page is loaded for the first time
      */
+    clearSpotifySessionTimeout();
     loadTokenInfoFromLocalStorage();
+    setSpotifySessionTimeout();
   }, []);
 
   const search = (term) => {
@@ -118,7 +122,10 @@ function App() {
               </div>
             </div>
               <div className={`logoutButtonContainer ${positioningStyles.centerContainer}`}>
-              <Button onClick={revokeToken} >
+              <Button onClick={() => {
+                clearSpotifySessionTimeout();
+                revokeToken();
+              }} >
                 LOGOUT
               </Button>
             </div>
